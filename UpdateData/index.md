@@ -1,6 +1,6 @@
 ---
 label: Update Data
-order: 85
+order: 75
 icon: "/static/custom.png"
 ---
 
