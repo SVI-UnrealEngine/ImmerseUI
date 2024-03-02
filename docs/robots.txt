@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koodokage.github.io/UE_ModularMenu/sitemap.xml.gz
