@@ -54,15 +54,24 @@ view block generated on container `CharacterScreen`.
 
 ---
 :::sample
-Directory :  `~/ImmerseUI/Blueprints/BP_CharacterScreenDummy`
+Directory :  `~/ImmerseUI/Blueprints/CharacterCustom/BP_CharacterScreenActor`
 :::
 
-# Customizable view BP_CharacterScreenDummy
-when character screen is open `BP_CharacterScreenDummy` activate and connect to screen.
+# Customizable  BP_CharacterScreenActor
+when character screen is open `BP_CharacterScreenActor` activate and connect to screen.
 - `Change` event called by user interface with a `F_Item` parameter for make a distinction about content and subject.
-- `BP_CharacterScreenDummy` can be change for custom structure and can be extended for new subject.
--  adding new subject also require an uptade in `E_EquipmentTag`.
+-  adding new customizable target also require an uptade in `E_CharacterScreenTarget` (like pet,car,weapon).
+-  adding new item for skeletal mesh and adding on socket also require an uptade in `E_EquipmentTag`.
 
+---
+:::sample
+Directory :  `~/ImmerseUI/Blueprints/CharacterCustom/CharacterScreenItem`
+:::
+
+# Base of item CharacterScreenItem
+All character screen customizer item like material, component, can be created by using `CharacterScreenItem`
+- logic must be written for each item
+- override `ApplyItem` event for logics
 
 ---
 :::sample
@@ -71,9 +80,7 @@ Directory :  `~/ImmerseUI/Blueprints/Data/F_Item`
 
 ## Structure
 
-- Item `pawnable items like Gun,Helmet...`.
-- MaterialInstance  `skins,color,texture etc...`
-- Equipment Tag `subject in BP_CharacterScreenDummy`.
+- Item `spawnable items base on CharacterScreenItem `.
 
 ---
 :::sample
@@ -97,5 +104,5 @@ Directory :  `~/ImmerseUI/Blueprints/Data/F_CharacterSection`
 ## Structure
 
 - Title `content title main label`.
-- Equipment Tag `subject in BP_CharacterScreenDummy`.
+- Target `screen target view in BP_CharacterScreenActor`.
 - Contents `list of F_CharacterSectionContent`.

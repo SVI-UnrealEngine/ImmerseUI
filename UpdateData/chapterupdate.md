@@ -36,6 +36,7 @@ Data Updates : create a `F_Chapter` array in SaveGame class and use `UpdateChapt
 - BlockedState (`[OPTIONAL] if is false level is unlocked`)
 
 
-
-
+!!!
+Unlocking Chapter/Level/Map :`PlayTime` and `LastSaveTime` must leaved empty and set `BlockedState` to `false`.
+!!!
 

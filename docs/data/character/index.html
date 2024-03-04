@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/ImmerseUI">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.762678850861">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.762867298587">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.762678850861" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.762867298587" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.762678850861" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.762867298587" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.762678850861" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.762867298587" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,19 +218,33 @@
 <li>randomly show last selected item.(changeable with save data).</li>
 </ul>
 <hr>
-<div class="sample"><p>Directory :  <code v-pre>~/ImmerseUI/Blueprints/BP_CharacterScreenDummy</code></p>
+<div class="sample"><p>Directory :  <code v-pre>~/ImmerseUI/Blueprints/CharacterCustom/BP_CharacterScreenActor</code></p>
 </div>
-<doc-anchor-target id="customizable-view-bp_characterscreendummy">
+<doc-anchor-target id="customizable--bp_characterscreenactor">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#customizable-view-bp_characterscreendummy">#</doc-anchor-trigger>
-        <span>Customizable view BP_CharacterScreenDummy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#customizable--bp_characterscreenactor">#</doc-anchor-trigger>
+        <span>Customizable  BP_CharacterScreenActor</span>
     </h1>
 </doc-anchor-target>
-<p>when character screen is open <code v-pre>BP_CharacterScreenDummy</code> activate and connect to screen.</p>
+<p>when character screen is open <code v-pre>BP_CharacterScreenActor</code> activate and connect to screen.</p>
 <ul>
 <li><code v-pre>Change</code> event called by user interface with a <code v-pre>F_Item</code> parameter for make a distinction about content and subject.</li>
-<li><code v-pre>BP_CharacterScreenDummy</code> can be change for custom structure and can be extended for new subject.</li>
-<li>adding new subject also require an uptade in <code v-pre>E_EquipmentTag</code>.</li>
+<li>adding new customizable target also require an uptade in <code v-pre>E_CharacterScreenTarget</code> (like pet,car,weapon).</li>
+<li>adding new item for skeletal mesh and adding on socket also require an uptade in <code v-pre>E_EquipmentTag</code>.</li>
+</ul>
+<hr>
+<div class="sample"><p>Directory :  <code v-pre>~/ImmerseUI/Blueprints/CharacterCustom/CharacterScreenItem</code></p>
+</div>
+<doc-anchor-target id="base-of-item-characterscreenitem">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#base-of-item-characterscreenitem">#</doc-anchor-trigger>
+        <span>Base of item CharacterScreenItem</span>
+    </h1>
+</doc-anchor-target>
+<p>All character screen customizer item like material, component, can be created by using <code v-pre>CharacterScreenItem</code></p>
+<ul>
+<li>logic must be written for each item</li>
+<li>override <code v-pre>ApplyItem</code> event for logics</li>
 </ul>
 <hr>
 <div class="sample"><p>Directory :  <code v-pre>~/ImmerseUI/Blueprints/Data/F_Item</code></p>
@@ -242,9 +256,7 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li>Item <code v-pre>pawnable items like Gun,Helmet...</code>.</li>
-<li>MaterialInstance  <code v-pre>skins,color,texture etc...</code></li>
-<li>Equipment Tag <code v-pre>subject in BP_CharacterScreenDummy</code>.</li>
+<li>Item <code v-pre>spawnable items base on CharacterScreenItem </code>.</li>
 </ul>
 <hr>
 <div class="sample"><p>Directory :  <code v-pre>~/ImmerseUI/Blueprints/Data/F_CharacterSectionContent</code></p>
@@ -273,7 +285,7 @@
 </doc-anchor-target>
 <ul>
 <li>Title <code v-pre>content title main label</code>.</li>
-<li>Equipment Tag <code v-pre>subject in BP_CharacterScreenDummy</code>.</li>
+<li>Target <code v-pre>screen target view in BP_CharacterScreenActor</code>.</li>
 <li>Contents <code v-pre>list of F_CharacterSectionContent</code>.</li>
 </ul>
 
